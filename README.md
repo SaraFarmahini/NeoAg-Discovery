@@ -4,6 +4,28 @@ A five-stage computational workflow for translating lung cancer mutation data in
 
 [**View Repository**](https://github.com/SaraFarmahini/NeoAg-Discovery)
 
+### Pipeline Diagram
+
+```
+     COSMIC mutations
+            ↓
+   Neoantigen generation
+            ↓
+ NetMHCpan binding prediction
+            ↓
+  Strong binder filtering
+            ↓
+  TCR interaction scoring
+            ↓
+  Candidate neoantigens
+```
+
+### Biological Motivation
+
+Tumor-specific mutations can generate **neoantigens**—peptides recognized by T cells as non-self. Identifying these neoantigens is critical for personalized cancer immunotherapy and vaccine design. This pipeline addresses that need by turning NSCLC mutation data into ranked, MHC-presented peptide candidates with associated TCR-binding scores.
+
+---
+
 This repository hosts a modular pipeline designed to identify high-affinity neoantigens from Non-Small Cell Lung Cancer (NSCLC) variants. By integrating COSMIC mutation data, MHC binding predictions (NetMHCpan 4.2), and TCR–peptide scoring, the pipeline provides a streamlined path from raw genomic data to interpreted visualizations.
 
 ---
@@ -19,6 +41,42 @@ The project is structured as a sequential flow, where each stage builds upon the
 3. **MHC Binding:** Predicting affinity using NetMHCpan 4.2 to identify "strong binders" (EL_Rank ≤ 0.5).
 4. **Refinement & Scoring:** Applying BLOSUM distance metrics and TCR-binding probability models (NetTCR-2).
 5. **Interpretation:** Generating diagnostic plots and funnel reports to visualize the selection process.
+
+---
+
+## Key Results
+
+The pipeline produces interpretable outputs at each stage:
+
+| Output | Description |
+|--------|-------------|
+| **Neoantigen / EL_Rank distribution** | Funnel and binding-affinity distribution across alleles and genes (`report_pipeline_funnel.png`, `report_el_rank_distribution.png`) |
+| **TCR interaction score distribution** | CDR3β–peptide binding score and logit/probability distributions (`cdr3b_binding_score_distribution.png`, `strong_binders_logit_vs_probability.png`) |
+| **Top candidate neoantigens** | Ranked table of strong binders with best TCR scores (`strong_binders_best_cdr3b.csv`) |
+
+All figures are written to `05_cancer_genomic_interpretation/visualizations/` after running the workflow.
+
+---
+
+## Workflow Execution
+
+One command runs the full pipeline from mutation data to visualizations:
+
+```bash
+snakemake --cores 4
+```
+
+Snakemake runs stages in dependency order and skips steps whose outputs already exist. For a dry-run to preview the plan: `snakemake -n`.
+
+---
+
+## Skills Demonstrated
+
+- **Cancer genomics analysis** — COSMIC mutation data, transcript-level variants, protein sequence handling
+- **Neoantigen discovery pipelines** — End-to-end workflow from mutations to candidate peptides
+- **Immunoinformatics tools** — NetMHCpan (MHC binding), BLOSUM metrics, NetTCR-2 comparison
+- **PyTorch deep learning models** — TCR–peptide binding scoring with custom checkpoints
+- **Reproducible workflows using Snakemake** — Dependency-aware automation and incremental runs
 
 ---
 
