@@ -1,0 +1,51 @@
+Using model_py=/home/farmahini/step6_NSCLC/tuned_model/final_model_new_hpo_bce_logits.py
+Using checkpoint=/home/farmahini/step6_NSCLC/tuned_model/finetune/best_model.pt
+Loaded 444 peptide rows, 197850 CDR3β sequences. Batch size=512.
+Pre-encoding CDR3β pool...
+  Encoded 50000 / 197850 CDR3β sequences.
+  Encoded 100000 / 197850 CDR3β sequences.
+  Encoded 150000 / 197850 CDR3β sequences.
+  Encoded 197850 / 197850 CDR3β sequences.
+  Processed 50 / 444 peptides.
+  Processed 100 / 444 peptides.
+  Processed 150 / 444 peptides.
+  Processed 200 / 444 peptides.
+  Processed 250 / 444 peptides.
+  Processed 300 / 444 peptides.
+  Processed 350 / 444 peptides.
+  Processed 400 / 444 peptides.
+  Processed 444 / 444 peptides.
+Saved 444 rows to /home/farmahini/step6_NSCLC/strong_binders_best_cdr3b.csv
+
+=== Promiscuous CDR3β check ===
+Total peptide rows: 444
+Unique CDR3β that are 'best' for at least one peptide: 55
+
+*** WARNING ***
+At least one CDR3β is best for 117 peptides (>50).
+Top promiscuous candidates:
+    117 peptides  CSVGGISGRGVINEQFF
+     45 peptides  ASRVGPEAF
+     26 peptides  CSVEDRGPPGSGANVLT
+     24 peptides  CASSPIGGMGTGELFF
+     18 peptides  CAIPLLPGASTGELFF
+
+Top 15 CDR3β by number of peptides they are 'best' for:
+------------------------------------------------------------
+    117 ( 26.4%)  CSVGGISGRGVINEQFF
+     45 ( 10.1%)  ASRVGPEAF
+     26 (  5.9%)  CSVEDRGPPGSGANVLT
+     24 (  5.4%)  CASSPIGGMGTGELFF
+     18 (  4.1%)  CAIPLLPGASTGELFF
+     17 (  3.8%)  ASSAQYEQF
+     14 (  3.2%)  CVQGGNRVV
+     13 (  2.9%)  CSARTIDRHANTGELF
+     10 (  2.3%)  CASSLWSIGGGGFIEAF
+     10 (  2.3%)  ASSQGVSVFGGITEAF
+      9 (  2.0%)  CASSSHPGRSSGANVLT
+      9 (  2.0%)  CSAPRFGETGESGELFF
+      8 (  1.8%)  SSTEYNEQF
+      8 (  1.8%)  CSAPTLGLAGAPDGELF
+      7 (  1.6%)  SSRDRAETQY
+
+Check complete. Many peptides sharing the same best CDR3 may warrant further inspection.

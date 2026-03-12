@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+.eggs/
+
+# Snakemake
+.snakemake/
+
+# Logs
+*.log
+
+# IDE / OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Optional: exclude large/generated data (uncomment if you want a code-only repo)
+# 01_nsclc_mutation_data/Cosmic_ResistanceMutations_v101_GRCh38.tsv
+# 01_nsclc_mutation_data/Updated_Cosmic_Data_with_Sequences.tsv
+# 01_nsclc_mutation_data/protein_sequences/
+# 02_generate_mutant_peptides/neoantigens_primary.csv
+# 02_generate_mutant_peptides/neoantigen_9mers.csv
+# 02_generate_mutant_peptides/neoantigen_9mers.list
+# 03_predict_mhc_binding/*.xls
+# 03_predict_mhc_binding/netmhcpan_peptide_list.txt
+# 04_filter_strong_binders/*.csv
+# 04_filter_strong_binders/result1/
+# 05_cancer_genomic_interpretation/visualizations/
+
+# Model checkpoints (large; document download path in README if needed)
+# 04_filter_strong_binders/tuned_model/*.pt
+# 04_filter_strong_binders/tuned_model/finetune/

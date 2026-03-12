@@ -1,0 +1,24 @@
+digraph workflow {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+    "fetch_primary" -> "generate_9mers";
+    "generate_9mers" -> "predict_mhc";
+    "predict_mhc" -> "peptide_wt";
+    "predict_mhc" -> "copy_strong_binders";
+    "peptide_wt" -> "blosum_metrics";
+    "blosum_metrics" -> "metrics_unique";
+    "blosum_metrics" -> "score_tcr";
+    "copy_strong_binders" -> "plot_report";
+    "generate_9mers" -> "plot_report";
+    "fetch_primary" -> "plot_report";
+    "metrics_unique" -> "plot_schematic";
+    "generate_9mers" -> "plot_schematic";
+    "fetch_primary" -> "plot_schematic";
+    "score_tcr" -> "plot_cdr3b";
+    "score_tcr" -> "plot_logit";
+    "plot_report" -> "all";
+    "plot_schematic" -> "all";
+    "plot_cdr3b" -> "all";
+    "plot_logit" -> "all";
+    "score_tcr" -> "all";
+}

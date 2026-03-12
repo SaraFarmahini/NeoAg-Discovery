@@ -1,0 +1,22 @@
+Total peptide rows: 167
+Unique CDR3β that are 'best' for at least one peptide: 63
+
+Top 15 CDR3β by number of peptides they are 'best' for:
+------------------------------------------------------------
+     14 (  8.4%)  CASSSHPGRSSGANVLT
+     13 (  7.8%)  CASSLWSIGGGGFIEAF
+     11 (  6.6%)  ASRVGPEAF
+      9 (  5.4%)  SSRDRAETQY
+      8 (  4.8%)  CFASSKGPAGGPRAQFF
+      7 (  4.2%)  CASSPLRGSPSGANVLT
+      7 (  4.2%)  CASGFIGASGRGTGELF
+      6 (  3.6%)  CDSSSHLDREETQYF
+      6 (  3.6%)  SARVDRDSYEQYV
+      6 (  3.6%)  CSAPTLGLAGAPDGELF
+      4 (  2.4%)  CSSRFRENSVNNIYF
+      4 (  2.4%)  CASSSYRDRESGANVLT
+      4 (  2.4%)  CSVGGISGRGVINEQFF
+      3 (  1.8%)  SASQEVWFPGYSNQPQH
+      3 (  1.8%)  CAIPLLPGASTGELFF
+
+Check complete. Many peptides sharing the same best CDR3 may warrant further inspection.

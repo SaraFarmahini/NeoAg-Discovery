@@ -1,0 +1,4 @@
+peptide,wt,blosum_distance,aliphatic_index_distance,boman_distance,best_cdr3b,binding_score
+LLLSWMKEV,LLLSRMKEV,10.0,0.0,1.89,SSRDRAETQY,5.03
+QLMPFGSLL,QLMPFGCLL,5.0,0.0,0.24,SSRDRAETQY,5.41
+QLMPFGSLL,QLMPFGCLL,5.0,0.0,0.24,SSRDRAETQY,5.41
